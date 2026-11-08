@@ -1,0 +1,20 @@
+$COD
+PMC0 # atspausdina C0 turini
+GIF0 # gauna skaiciu, patalpina F0
+PMD0 # atspausdina D0 turini
+GIF1 # gauna skaiciu, patalpina F1
+LAF0 # A := [F0]
+LBF1 # B := [F1]
+ADDA # A := A + B
+SAF2 # [F2] := A
+PME0 # atspausdina E0 turini
+PIF2 # atspausdina F2 turini
+HALT # baigia programa
+$DAT
+C0 : "Iveskite pirma skaiciu: nnnn"
+D0 : "Iveskite antra skaiciu: nnnn"
+E0 : "Suma:   nnnn"
+F0 : 00000000
+F1 : 00000000
+F2 : 00000000
+$END

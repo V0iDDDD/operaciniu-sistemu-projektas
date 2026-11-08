@@ -1,0 +1,13 @@
+$COD
+PMD0 # atspausdina D0 turini
+GIF0 # gauna skaiciu, patalpina F0
+LAF0 # A := [F0]
+LOCK # užimamas semaforas
+WS00 # bendroji_atmintis[00] := A
+ULCK # atlaisvinamas semaforas
+HALT # baigia programa
+$DAT
+D0 : "Iveskite skaiciu:   nnnn"
+E0 : "Skaicius patalpintas bendroje atmintyje nnnn"
+F0 : 00000000
+$END
