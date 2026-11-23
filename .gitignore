@@ -1,0 +1,7 @@
+# Sukompiliuoti failai
+*.o
+*.exe
+a.out
+test_memory
+test_alu
+test_paging
