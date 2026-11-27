@@ -12,6 +12,8 @@ constexpr uint8_t SI_PM = 6;
 constexpr uint8_t SI_RS = 7;
 constexpr uint8_t SI_WS = 8;
 constexpr uint8_t SI_HALT = 9;
+constexpr uint8_t SI_LOCK = 10;
+constexpr uint8_t SI_ULCK = 11;
 
 constexpr uint8_t PI_ADDRESS = 1;
 constexpr uint8_t PI_OPCODE = 2;

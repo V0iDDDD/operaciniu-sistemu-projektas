@@ -41,6 +41,6 @@ uint16_t  aluNot(uint16_t a);               // NOTA, zymiu nekeicia
 // VALDYMO PERDAVIMAI
 
 // ar valdymo perdavimo komanda op ("JP", "JE", ...) vykdoma, esant zymems flags
-bool jumpCondition(const std::string &op, uint8_t flags);
+bool shouldJump(const std::string &op, uint8_t flags);
 
 #endif // ALU_HPP

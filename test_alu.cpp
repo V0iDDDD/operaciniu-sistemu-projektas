@@ -51,11 +51,11 @@ int main() {
 
     // VALDYMO PERDAVIMAI (po COMP)
     uint8_t eq = aluSub(5, 5).flags;
-    check(jumpCondition("JE", eq) && !jumpCondition("JN", eq), "JE/JN, kai lygu");
+    check(shouldJump("JE", eq) && !shouldJump("JN", eq), "JE/JN, kai lygu");
 
     uint8_t f = aluSub(0x7FFF, 0xFFFF).flags;          
-    check(jumpCondition("JG", f), "JG: 32767 > -1 (zenkliskai)");
-    check(jumpCondition("JB", f), "JB: 7FFF < FFFF (nezenkliskai)");
+    check(shouldJump("JG", f), "JG: 32767 > -1 (zenkliskai)");
+    check(shouldJump("JB", f), "JB: 7FFF < FFFF (nezenkliskai)");
 
     std::cout << (failed == 0 ? "test_alu: visi testai praejo\n" : "test_alu: yra klaidu\n");
     return failed == 0 ? 0 : 1;

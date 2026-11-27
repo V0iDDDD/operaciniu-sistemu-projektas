@@ -145,7 +145,7 @@ uint16_t aluNot(uint16_t a) {
 
 // VALDYMO PERDAVIMAI
 
-bool jumpCondition(const std::string &op, uint8_t flags) {
+bool shouldJump(const std::string &op, uint8_t flags) {
     bool cf = (flags & FLAG_CF) != 0;
     bool zf = (flags & FLAG_ZF) != 0;
     bool sf = (flags & FLAG_SF) != 0;
