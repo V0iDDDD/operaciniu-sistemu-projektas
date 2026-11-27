@@ -15,7 +15,9 @@ constexpr int TOTAL_WORDS  = TOTAL_BLOCKS * BLOCK_WORDS;
 constexpr int MEMORY_BYTES = TOTAL_WORDS * WORD_SIZE;             
  
 constexpr int SHARED_FIRST_BLOCK = USER_BLOCKS - 2;  
-constexpr int SUPER_FIRST_BLOCK  = USER_BLOCKS;     
+constexpr int SUPER_FIRST_BLOCK  = USER_BLOCKS;   
+
+using Block = std::array<std::string, BLOCK_WORDS>;
  
 class Memory {
 public:
@@ -24,8 +26,8 @@ public:
     std::string readWord(int wordAddress);
     void writeWord(int wordAddress, const std::string &word);
 
-    std::array<std::string, BLOCK_WORDS> readBlock(int blockNumber);
-    void writeBlock(int blockNumber, const std::array<std::string, BLOCK_WORDS> &block);
+    Block readBlock(int blockNumber);
+    void writeBlock(int blockNumber, const Block &block);
     void printBlock(int blockNumber);
     
 private:

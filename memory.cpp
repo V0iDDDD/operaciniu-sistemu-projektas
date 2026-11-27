@@ -44,13 +44,13 @@ void Memory::writeWord(int wordAddress, const std::string &word) {
     }
 }
 
-std::array<std::string, BLOCK_WORDS> Memory::readBlock(int blockNumber) {
+Block Memory::readBlock(int blockNumber) {
     if (blockNumber < 0 || blockNumber > TOTAL_BLOCKS - 1) {
         throw std::out_of_range("readBlock: blogas bloko numeris"); 
     }
 
     int firstWordAddress = blockNumber * BLOCK_WORDS;
-    std::array<std::string, BLOCK_WORDS> block;
+    Block block;
     for (int i = 0; i < BLOCK_WORDS; ++i) {
         block[i] = readWord(firstWordAddress + i);
     }
@@ -58,7 +58,7 @@ std::array<std::string, BLOCK_WORDS> Memory::readBlock(int blockNumber) {
     return block;
 }
 
-void Memory::writeBlock(int blockNumber, const std::array<std::string, BLOCK_WORDS> &block) {
+void Memory::writeBlock(int blockNumber, const Block &block) {
     if (blockNumber < 0 || blockNumber > TOTAL_BLOCKS - 1) {
         throw std::out_of_range("writeBlock: blogas bloko numeris"); 
     }
@@ -70,7 +70,7 @@ void Memory::writeBlock(int blockNumber, const std::array<std::string, BLOCK_WOR
 }
 
 void Memory::printBlock(int blockNumber){
-    std::array<std::string, BLOCK_WORDS> block = readBlock(blockNumber);
+    Block block = readBlock(blockNumber);
     if (blockNumber < 10) std::cout << '0';
     std::cout << blockNumber << ": ";
     for (int i = 0; i < BLOCK_WORDS; ++i) {

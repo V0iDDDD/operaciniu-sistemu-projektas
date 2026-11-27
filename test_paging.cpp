@@ -13,7 +13,7 @@ void check(bool condition, const std::string &name) {
 int main() {
     Memory m;
 
-    std::array<std::string, BLOCK_WORDS> pageTable;
+    Block pageTable;
 
     for (int i = 0; i < BLOCK_WORDS; ++i) {
         pageTable[i] = toHex(2 * i + 1);

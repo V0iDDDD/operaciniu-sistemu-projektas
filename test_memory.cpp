@@ -13,11 +13,11 @@ int main() {
     m.printBlock(0);
     m.printBlock(5);
 
-    std::array<std::string, BLOCK_WORDS> block5 = m.readBlock(5);
+    Block block5 = m.readBlock(5);
     m.writeBlock(10, block5);
     m.printBlock(10);
 
     std::cout << "Realus adresas " << 0 * BLOCK_WORDS + 7 << ": " << m.readWord(0 * BLOCK_WORDS + 7) << '\n';
     std::cout << "Realus adresas " << 5 * BLOCK_WORDS + 12 << ": " << m.readWord(5 * BLOCK_WORDS + 12) << '\n';
-    std::cout << "Atmintis: " << MEMORY_BYTES << " baitai, " << TOTAL_WORDS << " zodziai, " << TOTAL_BLOCKS << "blokai\n";
+    std::cout << "Atmintis: " << MEMORY_BYTES << " baitai, " << TOTAL_WORDS << " zodziai, " << TOTAL_BLOCKS << " blokai\n";
 }
